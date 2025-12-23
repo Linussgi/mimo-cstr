@@ -56,22 +56,22 @@ The rate constant $k$ depends on temperature $T$:
 
 $$k = P \exp \left ( \frac{-E_a}{RT} \right )$$
 
-Therefore, the term $k C_A$ is nonlinear and not LTI. To linearise, the 1st order Taylor approximation of the term can be used, linearising around $T = T_0$ and $C_A = C_{A_0}$:
+Therefore, the term $k C_A$ is nonlinear and not LTI. To linearise, the 1st order Taylor approximation of the term can be used, linearising around $T = T_0$ and $C_A = C_{A0}$:
 
 $$C_A e^{-\frac{E_a}{RT}} \approx e^{-\frac{E_a}{R T_0}} C_{A0} + e^{-\frac{E_a}{R T_0}} (C_A - C_{A0}) + C_{A0} e^{-\frac{E_a}{R T_0}} \frac{E_a}{R T_0^2} (T - T_0)$$
 
 Defining deviation variables:
 
-- $C_A^* = C_A - C_{A_0}$
-- $T^* = T - T_0$
-- $I_A^* = I_A - I_{A_0}$
-- $T_c^* = T_c - T_{c_0}$
+- $C_A^{*} = C_A - C_{A0}$
+- $T^{*} = T - T_0$
+- $I_A^{*} = I_A - I_{A0}$
+- $T_c^{*} = T_c - T_{c0}$
 
 Applying the linearisation and substituting the deviation variables into the balance equations:
 
-$$\frac{dC_A^*}{dt} = - \left(\frac{1}{\tau} + P e^{-\frac{E_a}{R T_0}}\right) C_A^* - \left(\frac{P E_a}{RT_0^2} e^{-\frac{E_a}{R T_0}} C_{A_0}\right) T^* + \frac{1}{\tau} I_A^*$$
+$$\frac{dC_A^{*}}{dt} = - \left(\frac{1}{\tau} + P e^{-\frac{E_a}{R T_0}}\right) C_A^{*} - \left(\frac{P E_a}{RT_0^2} e^{-\frac{E_a}{R T_0}} C_{A0}\right) T^{*} + \frac{1}{\tau} I_A^{*}$$
 
-$$\frac{dT^*}{dt} = - J P e^{-\frac{E_a}{R T_0}} C_A^* + \left( J P e^{-\frac{E_a}{R T_0}} C_{A_0} \frac{E_a}{RT_0^2} - \frac{1}{\tau} - \frac{UA}{\rho C_p V} \right ) T^* + \frac{UA}{\rho C_p V} T_c^*$$
+$$\frac{dT^{*}}{dt} = - J P e^{-\frac{E_a}{R T_0}} C_A^{*} + \left( J P e^{-\frac{E_a}{R T_0}} C_{A0} \frac{E_a}{RT_0^2} - \frac{1}{\tau} - \frac{UA}{\rho C_p V} \right ) T^{*} + \frac{UA}{\rho C_p V} T_c^{*}$$
 
 This brings the model into the state space form:
 
@@ -79,7 +79,7 @@ $$\mathrm{\dot x} = A \mathrm{x} + B \mathrm{u}$$
 
 With:
 
-$$\mathrm{x} = [C_A^* \; T^*]^{\top} \; \; \; \; \mathrm{u} = [I_A^* \; T_c^*]^{\top}$$
+$$\mathrm{x} = [C_A^{*} \; T^{*}]^{\top} \; \; \; \; \mathrm{u} = [I_A^{*} \; T_c^{*}]^{\top}$$
 
 The resulting plant is MIMO with bidirectional coupling between the two CVs. The system has no direct feedthrough from MVs to CVs.
 
