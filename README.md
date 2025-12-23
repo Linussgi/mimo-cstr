@@ -62,16 +62,18 @@ $$C_A e^{-\frac{E_a}{RT}} \approx e^{-\frac{E_a}{R T_0}} C_{A0} + e^{-\frac{E_a}
 
 Defining deviation variables:
 
-- $C_A^{*} = C_A - C_{A0}$
-- $T^{*} = T - T_0$
-- $I_A^{*} = I_A - I_{A0}$
-- $T_c^{*} = T_c - T_{c0}$
+- $C_A^{(d)} = C_A - C_{A0}$
+- $T^{(d)} = T - T_0$
+- $I_A^{(d)} = I_A - I_{A0}$
+- $T_c^{(d)} = T_c - T_{c0}$
+
+(Note: GitHub LaTeX does not seem to like having `*` in superscripts, so `(d)` is used to indicated deviation variables instead)
 
 Applying the linearisation and substituting the deviation variables into the balance equations:
 
-$$\frac{dC_A^{*}}{dt} = - \left(\frac{1}{\tau} + P e^{-\frac{E_a}{R T_0}}\right) C_A^{*} - \left(\frac{P E_a}{RT_0^2} e^{-\frac{E_a}{R T_0}} C_{A0}\right) T^{*} + \frac{1}{\tau} I_A^{*}$$
+$$\frac{dC_A^{(d)}}{dt} = - \left(\frac{1}{\tau} + P e^{-\frac{E_a}{R T_0}}\right) C_A^{(d)} - \left(\frac{P E_a}{RT_0^2} e^{-\frac{E_a}{R T_0}} C_{A0}\right) T^{(d)} + \frac{1}{\tau} I_A^{(d)}$$
 
-$$\frac{dT^{*}}{dt} = - J P e^{-\frac{E_a}{R T_0}} C_A^{*} + \left( J P e^{-\frac{E_a}{R T_0}} C_{A0} \frac{E_a}{RT_0^2} - \frac{1}{\tau} - \frac{UA}{\rho C_p V} \right ) T^{*} + \frac{UA}{\rho C_p V} T_c^{*}$$
+$$\frac{dT^{(d)}}{dt} = - J P e^{-\frac{E_a}{R T_0}} C_A^{(d)} + \left( J P e^{-\frac{E_a}{R T_0}} C_{A0} \frac{E_a}{RT_0^2} - \frac{1}{\tau} - \frac{UA}{\rho C_p V} \right ) T^{(d)} + \frac{UA}{\rho C_p V} T_c^{(d)}$$
 
 This brings the model into the state space form:
 
@@ -79,7 +81,7 @@ $$\mathrm{\dot x} = A \mathrm{x} + B \mathrm{u}$$
 
 With:
 
-$$\mathrm{x} = [C_A^{*} \; T^{*}]^{\top} \; \; \; \; \mathrm{u} = [I_A^{*} \; T_c^{*}]^{\top}$$
+$$\mathrm{x} = [C_A^{(d)} \; T^{(d)}]^{\top} \; \; \; \; \mathrm{u} = [I_A^{(d)} \; T_c^{(d)}]^{\top}$$
 
 The resulting plant is MIMO with bidirectional coupling between the two CVs. The system has no direct feedthrough from MVs to CVs.
 
